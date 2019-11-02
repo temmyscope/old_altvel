@@ -65,7 +65,7 @@ Larafell has no syntax of its own but uses the inherited php syntax, making it e
 	 	sample: view(view, <optional>send data array to page)->paginate(<int> per_page)
 	 ]
 
-	=>
+	=> Several helper methods are available for use.
 	
 	=> Generates csrf token for each page to improve security against cross-site request forgery
 	
