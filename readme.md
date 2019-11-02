@@ -1,6 +1,7 @@
 ## About LaraFell (a.k.a Alt-Vel)
 
-=> LaraFell a.k.a Alt-Laravel is developed by Elisha Temiloluwa a.k.a TemmyScope	
+=> LaraFell a.k.a Alt-Vel is developed by Elisha Temiloluwa a.k.a TemmyScope	
+
 => Inspired By Phalcon & Laravel Php Web Application Frameworks.
 
 LaraFell is a web application framework with priority on security, performance and standard-compliance. 
