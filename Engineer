@@ -1,0 +1,38 @@
+#!/usr/bin/env php
+<?php
+define('LARAFELL_START', microtime(true));
+/*----------------------------------------------------------------------------------------------
+|										LARAFELL CONSTANTS										|
+-----------------------------------------------------------------------------------------------*/
+define('DB_TYPE', 'mysql');							//change the database type to your choice
+define('DB_NAME', 'test'); 						//change the database name to your database name
+define('DB_USER', 'root'); 							//change the access username to your database username
+define('DB_PASSWORD', ''); 							//make sure to use a secured password on production server
+define('DB_HOST', '127.0.0.1');						//this is a faster alternative to 'localhost'
+define('DEBUG', true); 								//must be removed from production servers or set as false
+
+/*-----------------------------------------------------------------------------------
+|							LARAFELL FRAMEWORK CONSTANTS							|
+|					Please do not tamper with the following constants 				|
+-----------------------------------------------------------------------------------*/
+define('DS', DIRECTORY_SEPARATOR);					
+define('ROOT', dirname(__FILE__));
+
+/*-----------------------------------------------------------------------------------
+|							LARAFELL AUTOLOAD										|
+|This autoloads namespaces i.e. namespaces where a class is contained				|
+|The Autoload function is registered with the php7 standard spl_autoload_register 	|
+-----------------------------------------------------------------------------------*/
+spl_autoload_register(function($className){
+	$classAry = explode('\\',$className);
+	$class = array_pop($classAry);
+	$subPath = strtolower(implode(DS,$classAry));
+	$path = ROOT . DS . $subPath . DS . $class . '.php';
+	if(file_exists($path)){
+	  require_once($path);
+	}
+});
+
+app\lib\Console::Parse($argc, $argv);
+
+exit();

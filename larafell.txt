@@ -1,0 +1,16 @@
+ =>Before blade templating engine larafell's landing page benchmarked a staggering 22.6885 times faster loading time over laravel's
+A simple performance test on laravel vs larafell landing page:
+ laravel 										laraFell
+	|												|
+  0.60601 microsecs 							0.02671 microsecs
+Average load speed of 0.0396 microsecs
+
+
+=>After adding the blade templating engine to larafell
+
+0.107, 0.125 => landing, login
+0.0249 =>register
+0.0921 =>home
+0.1012 =>logout
+
+page load speed dropped to an average of 0.1 microsecs
