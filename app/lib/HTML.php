@@ -1,7 +1,7 @@
 <?php 
 namespace app\lib;
 
-use app\model\{Validate, Session, Request as FormRequest, Strings};
+use app\model\{Session, Request as FormRequest, Strings};
 
 class HTML{
 

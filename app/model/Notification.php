@@ -2,7 +2,7 @@
 namespace app\model;
 
 class Notification{
-	public static $brand = BRAND, $protocol = SSL_PROTOCOL, $site = PROOT;
+	public static $brand = BRAND, $site = PROOT;
 
 	public static function AccountActivated($email){
 		$message = <<< __MAIL__
@@ -24,10 +24,8 @@ __MAIL__;
 		$site = self::$site;
 
 		$message = <<< __MAIL__
-		Welcome to {$brand}, Your account has been created. 
-		This is an automated massage system, please do not reply.
-		To activate your account, click on this link:
-		{$protocol}{$site}activate/{$email}/{$key}
+		Welcome to {$brand}, Your account has been created. This is an automated message system, please do not reply.
+		To activate your account, click on this link: {$site}activate/{$email}/{$key}
 __MAIL__;
 		self::EmailNotification($email, 'Account Creation Success', $message);
 	}

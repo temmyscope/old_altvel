@@ -70,9 +70,9 @@ class Router{
 				$controller == 'AuthController' && ($_endpoint != 'logoutEndPoint' && $_endpoint != 'aboutEndPoint')){
 				self::redirect('home');
 			}
-
+			
 			array_shift($url);
-			if($_endpoint !== 'indexEndPoint'){
+			if($_endpoint !== 'indexEndPoint' && $_endpoint !== 'activateEndPoint'){
 				array_shift($url);
 			}
 

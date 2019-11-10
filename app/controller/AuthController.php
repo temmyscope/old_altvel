@@ -62,11 +62,9 @@ class AuthController extends Controller{
 		view('auth.register');
 	}
 
-	public function activateEndPoint($email, $key){
-		$user = $this->AuthModel->findByEmail($email);
-		if($email === $user->email && $user->activation === $key){
-			$this->AuthModel->update(['verified' => 'true'], ['id' => $user->id]);
-			$user = ''; $this->request->status('success', 'Your Account has been created and Activated. Please Login');
+	public function activateEndPoint(...$args){
+		if( $this->AuthModel->update(['verified' => 'true'], ['email' => $args[0], 'activation' => $args[1]]) ){ 
+			$this->request->status('success', 'Your Account has been created and Activated. Please Login');
 			redirect('login');
 		}else{
 			redirect('errors/bad');
