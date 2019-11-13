@@ -11,19 +11,19 @@ hence we take the "boring stuffs" out of web appliction development for php deve
 LaraFell takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - Php Controller Array Structure [Restricts endpoints/pages accessible, making development on a production server a possiblity] 
-- [Simple, efficient & fast routing engine].
+- Simple, efficient & fast routing engine.
 - Php Array Syntax For Database data retrieval & manipulation
 - Supports all PHP PDO supported database types 
-- Improved Model class for eloquent data retrieval[method chaining]
+- Model class for eloquent data retrieval[method chaining]
 - Engineer Console:
 	=>Build Controllers from Console 
-	[ To see all commands: php Engineer]
+	[ To see all commands enter: php Engineer]
 
 	=>Build Model from console
 	
 	=>Build Api from Console
 	
-	=>Automatically generate keys for secured session, cookie and salt
+	=>Automatically generate keys for secured session, cookie and salt [Also set using composer's create-project command]
 
 - All Form Data are accessible through the Request Model and are pre-sanitized
 
@@ -56,15 +56,10 @@ Larafell has no syntax of its own but uses the inherited php syntax, making it e
 
 ## Larafell How-To
 
--In order to make the larafell framework aware of other frameworks/libraries: 
-	
-	=>initialise the library/framework Object in the app\model\Extern.php;
-
-	=>Then call it globally.
-
 -By default, api endpoints are accessible from your_site_domain/api/
 
 -The HTML template builder library is used to ease off frontend development but does not eliminate the need for a frontend designer:
+	
 	=> Together with the View helper, pagination becomes a stroll in the park:
 	 [
 	 	sample: view(view, <optional>send data array to page)->paginate(<int> per_page)
@@ -81,7 +76,7 @@ Larafell has no syntax of its own but uses the inherited php syntax, making it e
 -Th request validate method
 	=> is_same_as rule is used to test a request input against another request input as in [ is_same_as => ... ]
 
-	=> equals rule is used to test a request input against another value as in [ is_same_as => [ display=>..., value=>... ] ]
+	=> equals rule is used to test a request input against another value as in [ equals => [ display=>value] ]
 
 ## LaraFell Sponsors
 If you are interested in becoming a sponsor, please visit the LaraFell [Patreon page](https://patreon.com/temmyscope).
