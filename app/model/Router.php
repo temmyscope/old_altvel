@@ -40,6 +40,10 @@ class Router{
 			if(isset($url[0]) && in_array(strtolower($url[0]), $GLOBALS['controllers'][DEFAULT_CONTROLLER])){
 				$controller = DEFAULT_CONTROLLER;
 				$_endpoint = $url[0].'EndPoint';
+			}elseif( isset($url[0]) && DEFAULT_CONTROLLER == $controller && !in_array(strtolower($url[0]), $GLOBALS['controllers'][DEFAULT_CONTROLLER])){
+				$controller = 'AuthController';
+				$_endpoint = $url[0].'EndPoint';
+
 			}elseif(array_key_exists($controller, $GLOBALS['controllers'][RESTRICTED])){
 				$_endpoint = (isset($url[1]) && $url[1] != '' && in_array($url[1], $GLOBALS['controllers'][RESTRICTED][$controller])) ? 
 					$url[1].'EndPoint' : 'indexEndPoint';
