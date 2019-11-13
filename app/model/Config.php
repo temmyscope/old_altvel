@@ -15,6 +15,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_HOST', '127.0.0.1'); //may also be filename for sqlite database
 
+define('DEFAULT_CONTROLLER', 'AuthController');
 define('SITE_TITLE', 'Larafell');
 define('SITE_EMAIL', 'TemmyScope@protonmail.com');
 define('BRAND', 'Larafell');
@@ -39,11 +40,11 @@ define('PROOT', SSL_PROTOCOL.$_SERVER['HTTP_HOST'].PUBLIC_FOLDER.'/');
 |-----------------Set DEBUG value to false before deploying to production server----------------|
 -----------------------------------------------------------------------------------------------*/
 
-define('CURRENT_USER_SESSION_NAME', '8Xn6hAw5j103cMa4sUgpHzVxoTQ9RK7WvILCebuytG2krJfPlmqdZ');
-define('REMEMBER_ME_COOKIE_NAME', 'PZwuaKHdO6p38zWGR9cVFjvEiTnDgA0hLM1JqQmofkXx');
+define('CURRENT_USER_SESSION_NAME', '72qe8BSkJ19l0u5hEv6HKYyrZVQtngDLmsjcU43NRdTFPXOWIMfAoiwaGxCzpb');
+define('REMEMBER_ME_COOKIE_NAME', '8vXRwq29F1dCzUkloI6fyu7pnjmOSGWhJDxHYZ');
 define('REMEMBER_ME_COOKIE_EXPIRY', 2592000);
-define('REDIRECT', 'tY3ciQgrbNs9TKl72H6M5jRodhxXOW4ADn8u');
-define('SALT', 'AsTQM6ECZ1xvRJHp2NzYldWViGwUkOru');
+define('REDIRECT', '2lm7tyek5Vjfi4pX8FzRhIPTdGMnUsQN0YSAxb1ELDO');
+define('SALT', 'kCpJaL3E8lvc72urqZHRe51oit0NQbUT');
 define('DEBUG', true);
 
 /*----------------------------------------------------------------------------------------------

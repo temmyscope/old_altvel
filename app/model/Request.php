@@ -131,6 +131,16 @@ class Request{
 								$this->status('error', ["{$display} can only be one of the given options", $item]);
 							}
 							break;
+						case 'equals':
+							if( $value !== $rule_value['value'] ){
+								$this->status('error', ["{$display} must be the same value as {$rule_value['display']}", $item]);
+							}
+							break;
+						case 'is_same_as':
+							if( $value !== $source[$rule_value] ){
+								$this->status('error', ["{$display} must be the same value as {$rule_value}", $item]);
+							}
+							break;
 						case 'is_file':
 							if (!is_file($value)($value)){
 								$this->status('error', ["{$display} must be a valid file type", $item]);
@@ -177,7 +187,7 @@ class Request{
 		$name = basename($file['name']);
 		$nm  = Strings::UniqueName( $name );
 	    $tar = local_cdn().$nm;
-	    $FileType = pathinfo($name, PATHINFO_EXTENSION);
+	    $FileType = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 	    $target = $tar.'.'.$FileType;
 	    $uploadOk = 1;
 	    /*---------------------------------------------------------------------------------------

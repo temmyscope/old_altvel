@@ -148,6 +148,11 @@ class Strings{
 		return $var->format('Y-m-d H:i:s');
 	}
 
+	public static function Now($timezone): string{
+		$var = new DateTime('now', new DateTimeZone($timezone));
+		return $var->format('Y-m-d H:i:s');
+	}
+
 	public static function ReadableTime($time): string{
 		$current_time = time();
 		if (!is_int($time))

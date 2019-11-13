@@ -10,6 +10,7 @@
 			'name' => [ 'rule' => 'required', 'type'=>'text', 'placeholder' => 'Jane Doe'],
 			'email' => [ 'rule' => 'required', 'type'=>'email', 'placeholder' => 'user@example.com'],
 			'password' => ['rule' => 'required', 'type' => 'password', 'placeholder' =>'*********'],
+			'verify_password' => ['rule' => 'required', 'type' => 'password', 'placeholder' =>'*********'],
 			'Register' => [ 'type' => 'submit']
 		]);
 	?>

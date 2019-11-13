@@ -5,7 +5,7 @@
 	<?php use app\lib\HTML; ?>
 	<?= HTML::Card('About Us | Feedback'); ?>
 
-	Welcome To Larafell a.k.a Alt-Laravel.
+	Welcome To Larafell a.k.a Alt-Vel.
 
 	You'd find all the possible ways to contact us on this page <br>
 

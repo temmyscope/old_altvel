@@ -24,9 +24,9 @@ class AuthController extends Controller{
 			]);
 			if($request->passed()){
 				$contact = $this->AuthModel->rawInsert('contact_us', [
-					'email' => Request::post('email'),
-					'feedback' => Request::post('feedback'),
-					'created_at' => Strings::generateTime()
+					'email' => post('email'),
+					'feedback' => post('feedback'),
+					'created_at' => generateTime()
 				]);
 				$this->request->status('success', 'We have received your message. Thanks.');
 			}
@@ -39,6 +39,7 @@ class AuthController extends Controller{
 			$this->request->validate([
 				'email' => [ 'display' => 'E-mail', 'required' => true, 'valid_email' => true, 'unique' => true ],
 				'password' => [ 'display' => 'Password', 'required' => true, 'min' => 8 ],
+				'verify_password' => [ 'display' => 'Verify Password', 'required' => true, 'min' => 8, 'is_same_as' => 'password' ],
 				'name' => [ 'display' => 'Name', 'required' => true]
 			], 'Users');
 			if($this->request->passed()){
@@ -61,11 +62,9 @@ class AuthController extends Controller{
 		view('auth.register');
 	}
 
-	public function activateEndPoint($email, $key){
-		$user = $this->AuthModel->findByEmail($email);
-		if($email === $user->email && $user->activation === $key){
-			$this->AuthModel->update(['verified' => 'true'], ['id' => $user->id]);
-			$user = ''; $this->request->status('success', 'Your Account has been created and Activated. Please Login');
+	public function activateEndPoint(...$args){
+		if( $this->AuthModel->update(['verified' => 'true'], ['email' => $args[0], 'activation' => $args[1]]) ){ 
+			$this->request->status('success', 'Your Account has been created and Activated. Please Login');
 			redirect('login');
 		}else{
 			redirect('errors/bad');
