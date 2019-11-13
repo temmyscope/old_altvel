@@ -2,7 +2,7 @@
     "name": "larafell/larafell",
     "description": "High Speed PHP Web Application Framework For PHP Engineers",
     "type": "project",
-    "version": "v1.5.0",
+    "version": "v1.0.5",
     "minimum-stability": "dev",
     "source": {
         "type": "git",
