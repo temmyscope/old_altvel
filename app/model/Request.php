@@ -187,7 +187,7 @@ class Request{
 		$name = basename($file['name']);
 		$nm  = Strings::UniqueName( $name );
 	    $tar = local_cdn().$nm;
-	    $FileType = pathinfo($name, PATHINFO_EXTENSION);
+	    $FileType = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 	    $target = $tar.'.'.$FileType;
 	    $uploadOk = 1;
 	    /*---------------------------------------------------------------------------------------

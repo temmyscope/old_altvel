@@ -1,7 +1,7 @@
 <?php
 namespace app\controller;
 
-use app\model\{Controller, Request, Validate, Strings};
+use app\model\{Controller, Request, Strings};
 
 class HomeController extends Controller{
 

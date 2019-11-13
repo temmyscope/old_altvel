@@ -207,6 +207,10 @@ class Model{
 	/*
 	| The raw group of methods process queries without using tables registered with the Called Child Model
 	*/
+	public function rawQuery($table, $columns='*', $params= [], $values = []){
+		return $this->_db->query($table, $columns, $params, $values );
+	}
+
 	public function rawInsert($table, $params){
 		return $this->_db->save($table, $params);
 	}
