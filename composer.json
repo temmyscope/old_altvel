@@ -7,12 +7,12 @@
     "source": {
         "type": "git",
         "url": "https://github.com/temmyscope/larafell.git",
-        "reference": "2dcd0593c0ad5b9ccc40a2152df1c8b8910e9a03"
+        "reference": "10279d5137f90e82d008cfb777e9d0bf8d16a629"
     },
     "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/temmyscope/larafell/zipball/2dcd0593c0ad5b9ccc40a2152df1c8b8910e9a03",
-        "reference": "2dcd0593c0ad5b9ccc40a2152df1c8b8910e9a03",
+        "url": "https://api.github.com/repos/temmyscope/larafell/zipball/10279d5137f90e82d008cfb777e9d0bf8d16a629",
+        "reference": "10279d5137f90e82d008cfb777e9d0bf8d16a629",
         "shasum": ""
     },
     "require": {
