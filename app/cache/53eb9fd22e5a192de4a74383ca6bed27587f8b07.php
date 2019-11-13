@@ -1,6 +1,5 @@
-@extends('app')
-@section('title', 'About')
-@section('content')
+<?php $__env->startSection('title', 'About'); ?>
+<?php $__env->startSection('content'); ?>
 
 	<?php use app\lib\HTML; ?>
 	<?= HTML::Card('About Us | Feedback'); ?>
@@ -20,4 +19,5 @@
 		]);
 	?>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\larafell\app\view/auth/about.blade.php ENDPATH**/ ?>

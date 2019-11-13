@@ -15,6 +15,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_HOST', '127.0.0.1'); //may also be filename for sqlite database
 
+define('DEFAULT_CONTROLLER', 'AuthController');
 define('SITE_TITLE', 'Larafell');
 define('SITE_EMAIL', 'TemmyScope@protonmail.com');
 define('BRAND', 'Larafell');

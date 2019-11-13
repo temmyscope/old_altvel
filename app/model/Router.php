@@ -36,9 +36,9 @@ class Router{
 				$api->error(405);
 			}
 		}else{
-			$controller = (isset($url[0])) ? ucfirst(substr_replace($url[0], '', strcspn($url[0], '.'))).'Controller' : 'AuthController';
-			if(isset($url[0]) && in_array(strtolower($url[0]), $GLOBALS['controllers']['AuthController'])){
-				$controller = 'AuthController';
+			$controller = (isset($url[0])) ? ucfirst(substr_replace($url[0], '', strcspn($url[0], '.'))).'Controller' : DEFAULT_CONTROLLER;
+			if(isset($url[0]) && in_array(strtolower($url[0]), $GLOBALS['controllers'][DEFAULT_CONTROLLER])){
+				$controller = DEFAULT_CONTROLLER;
 				$_endpoint = $url[0].'EndPoint';
 			}elseif(array_key_exists($controller, $GLOBALS['controllers'][RESTRICTED])){
 				$_endpoint = (isset($url[1]) && $url[1] != '' && in_array($url[1], $GLOBALS['controllers'][RESTRICTED][$controller])) ? 
@@ -67,7 +67,7 @@ class Router{
 			}
 
 			if(Session::exists(CURRENT_USER_SESSION_NAME) && 
-				$controller == 'AuthController' && ($_endpoint != 'logoutEndPoint' && $_endpoint != 'aboutEndPoint')){
+				$controller== 'AuthController' && ($_endpoint != 'indexEndPoint' && $_endpoint != 'logoutEndPoint' && $_endpoint != 'aboutEndPoint')){
 				self::redirect('home');
 			}
 			
