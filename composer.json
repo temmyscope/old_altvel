@@ -2,7 +2,7 @@
     "name": "larafell/larafell",
     "description": "High Speed PHP Web Application Framework For PHP Engineers",
     "type": "project",
-    "version": "v1.9.0",
+    "version": "v2.0.0",
     "minimum-stability": "dev",
     "source": {
         "type": "git",
@@ -17,7 +17,7 @@
     },
     "require": {
         "php": ">=7.1.0",
-        "temmyscope/pda": "v3.7.0"
+        "temmyscope/pda": ">=v3.7.0"
     },
     "config": {
         "optimize-autoloader": true,
