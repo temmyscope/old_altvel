@@ -17,7 +17,7 @@
     },
     "require": {
         "php": ">=7.1.0",
-        "temmyscope/pda": "dev-master"
+        "temmyscope/pda": "v3.7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0"
